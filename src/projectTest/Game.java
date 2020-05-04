@@ -1,11 +1,9 @@
-package finalProject;
+package projectTest;
 
 import comp127graphics.*;
 
 import java.awt.Color;
 import java.util.*;
-
-import static comp127graphics.FontStyle.BOLD;
 
 @SuppressWarnings("WeakerAccess")
 public class Game {
