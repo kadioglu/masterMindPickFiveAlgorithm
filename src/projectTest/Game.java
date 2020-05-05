@@ -52,12 +52,6 @@ public class Game {
 
             Mastermind.runGame();
 
-            /*
-            * Color Converter For Strings to Color Objects
-             */
-
-            //                String currentColor = Mastermind.removeLastChar(Mastermind.userCode.get(i)).toLowerCase();
-
             for (String chosenColor : Mastermind.userCode) {
                 String currentColor = Mastermind.removeLastChar(chosenColor).toLowerCase();
                 System.out.println(currentColor);

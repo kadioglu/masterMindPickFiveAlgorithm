@@ -68,8 +68,6 @@ public class Board {
     }
 
 
-    public GraphicsGroup createUserInput;
-
     /**
      * Creates orbs for the results that the user can put as well as the actual results of the system
      * @param size  The width of the implied ellipse from which the smile’s arc is cut.
