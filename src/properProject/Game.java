@@ -1,19 +1,21 @@
 package properProject;
 
-public class Game {
+import java.util.Scanner;
 
+public class Game {
+    private static Scanner scanner;
+    Instructions instructions = new Instructions();
     public static void main(String[] args) {
-        System.out.println("========Settings========");
-        System.out.println();
-        System.out.println("========Directions========");
-        System.out.println("Enter a 4 digit number with each digit ranging from 0 to 5");
+       runGame();
+    }
+
+    public static void runGame(){
+        System.out.println("Do you want to play or do you want the computer to play? true/false");
+        Boolean answer = false;
         do {
             CodeMaker maker = new CodeMaker();
-            CodeBreaker breaker = new HumanSolver();
-            System.out.println();
+            CodeBreaker breaker = answer ? new HumanSolver(): new SolverAlgorithm();
             maker.setAnswer();
-            System.out.println("Answer: " + maker.getAnswer());
-            System.out.println();
             int turn = 0;
             Key response = null;
             do {
@@ -27,9 +29,8 @@ public class Game {
             System.out.println();
             System.out.println("========Winner========");
             System.out.println("Answer: " + maker.getAnswer());
+            System.out.println("Turns: " + turn);
             System.out.println("You won!");
         } while(false);
     }
-
-
 }
