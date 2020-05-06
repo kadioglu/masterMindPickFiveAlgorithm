@@ -18,7 +18,7 @@ public class HumanSolver implements CodeBreaker{
 
     public HumanSolver() {
     }
-
+//
 
     /**
      * Function that makes the key and to be used for the solver. Empty here
