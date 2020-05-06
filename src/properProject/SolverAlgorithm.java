@@ -1,7 +1,11 @@
 package properProject;
 
 import java.util.*;
-//
+
+/**
+ * Class that is used to make a Computer Solver that is a child of the CodeBreaker Interface
+ */
+
 public class SolverAlgorithm implements CodeBreaker {
 
     private Key response = null;
@@ -10,10 +14,19 @@ public class SolverAlgorithm implements CodeBreaker {
     private final List<Code> impossible = new LinkedList<>();
     private final Set<Code> possible;
 
+    /**
+     * Constructor that gets the range of a code and converts it into a set
+     */
+
     public SolverAlgorithm() {
         possible = Code.getRange();
     }
 
+    /**
+     * Function that recieves a key and checks what codes are possible or not based on the five
+     * guess algorithm
+     * @param key the key to be checked against
+     */
 
     @Override
     public void receiveKey(Key key) {
@@ -27,6 +40,13 @@ public class SolverAlgorithm implements CodeBreaker {
             }
         }
     }
+
+    /**
+     * Function that guesses the next code based on the possible and impossible codes and
+     * a minimax algorithm
+     * @return Code returns a code object that is the next most likely code to win the game
+     * or will help win the game soon
+     */
 
     @Override
     public Code guess() {

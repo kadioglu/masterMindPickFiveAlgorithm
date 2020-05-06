@@ -9,7 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static comp127graphics.FontStyle.BOLD;
-////
+
+/**
+ * Class used to make a row object for the GUI
+ */
+
 public class Row {
     private static Key colorKey;
     public static double nextPosition;

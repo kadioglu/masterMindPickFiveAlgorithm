@@ -3,7 +3,13 @@ package properProject;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
-//
+
+
+/**
+ * Function that makes a Key object to  be used
+ * to convert between code and color and code and text for the main program
+ */
+
 public class Key {
 
     private final int black;
@@ -26,6 +32,13 @@ public class Key {
             GREY = new Color(0x777777),
             ORANGE =new Color(0xF45F11);
 
+
+    /**
+     * Constructor that makes a key object based on guess results
+     * @param black  number of black peg results
+     * @param white  number of white peg results
+     * @param none   number of wrong peg results
+     */
 
     public Key(int black, int white, int none){
         this.black = black;
@@ -55,11 +68,25 @@ public class Key {
     }
 
 
+    /**
+     * Function that querries the ColorMap to get a Color object based on an integer Key
+     * @param ref  the key for the Hash Map
+     * @return myColor the value returned from the Hash Map
+     */
+
     public Color toColor(int ref){
 
         Color myColor = ColorMap.get(ref);
         return myColor;
     }
+
+
+    /**
+     * Function that querries the WordMap to get a String Object that
+     * defines a specific color based on an integer Key
+     * @param ref  the key for the Hash Map
+     * @return myColor the value returned from the Hash Map
+     */
 
     public String toWord(int ref){
 
@@ -67,9 +94,23 @@ public class Key {
         return myColor;
     }
 
+
+
+    /**
+     * Function that checks if a guess is correct
+     * @return boolean that is true if the final answer is correct i.e all 4 black pegs
+     */
+
     public boolean isCorrect() {
         return white == 0 && none == 0;
     }
+
+
+    /**
+     * Function that checks if one key is similar to another key
+     * @param obj the key to be checked against
+     * @return boolean true if the two keys are similar
+     */
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -94,18 +135,39 @@ public class Key {
         return true;
     }
 
+
+    /**
+     * Function that returns the key's parameters as a string object
+     * @return String the key's parameters in a sentence
+     */
+
     @Override
     public String toString() {
         return "black=" + black + ", white=" + white + ", none=" + none;
     }
 
+    /**
+     * Function that returns the value of the black variable
+     * @return int the value of the black variable
+     */
+
     public int getBlack() {
         return black;
     }
 
+    /**
+     * Function that returns the value of the white variable
+     * @return int the value of the white variable
+     */
+
     public int getWhite() {
         return white;
     }
+
+    /**
+     * Function that returns the value of the none variable
+     * @return int the value of the none variable
+     */
 
     public int getNone() {
         return none;
