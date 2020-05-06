@@ -10,6 +10,9 @@ import java.util.List;
 
 import static comp127graphics.FontStyle.BOLD;
 
+/**
+ * Class that creates a board object that holds the color code and position of colors.
+ */
 public class Board {
     private static Key colorKey;
     public static double nextPosition;

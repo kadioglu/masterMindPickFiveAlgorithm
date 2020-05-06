@@ -1,9 +1,11 @@
 package properProject;
 
 import java.util.Scanner;
-//
-public class Game {
 
+/**
+ * Class that creates a main function and runs the Mastermind game
+ */
+public class Game {
     private static Scanner scanner;
 
     Instructions instructions = new Instructions();
@@ -12,6 +14,9 @@ public class Game {
        runGame();
     }
 
+    /**
+     *
+     */
     public static void runGame(){
         System.out.println("Do you want to play or do you want the computer to play? true/false");
         Boolean answer = false;
