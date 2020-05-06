@@ -9,6 +9,7 @@ public class Code {
     private static final Random RANDOM = new Random();
     private static int codeRadix = 6;
     private static int codeLength = 4;
+    private Key wordKey = new Key(0,0,0);
 
     public final int[] pegs;
     public final int codePoint;
@@ -26,7 +27,17 @@ public class Code {
     private static int codeRange() {
         return (int) Math.pow(codeRadix, codeLength);
     }
+    public static int getCodeLength() {
+        return codeLength;
+    }
 
+    public static Set<Code> getRange() {
+        Set<Code> universe = new HashSet<>();
+        for (int i = 0; i < codeRange(); i++) {
+            universe.add(new Code(i));
+        }
+        return universe;
+    }
 
     public static boolean isValid(String input) {
         if (input.length() != codeLength) {
@@ -73,6 +84,13 @@ public class Code {
         return output;
     }
 
+    /**
+     * Find out the number of black balls and add them to the result code. The
+     * black balls are determined by looking at the position of each ball in the user
+     * code and checking if the corresponding position in the generated code is correct
+     * During this, update the number of each type of ball the user guessed completely correctly
+     */
+
     public Key getKey(Code other) {
         int[] a = Arrays.copyOf(pegs, pegs.length);
         int[] b = Arrays.copyOf(other.pegs, other.pegs.length);
@@ -97,5 +115,15 @@ public class Code {
         }
         none = codeLength - black - white;
         return new Key(black, white, none);
+    }
+
+    @Override
+    public String toString() {
+
+        String stringOutput = "";
+        for (int i = 0; i < pegs.length; i++) {
+            stringOutput += wordKey.toWord(pegs[i]) + " ";
+        }
+        return stringOutput;
     }
 }

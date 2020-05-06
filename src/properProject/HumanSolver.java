@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class HumanSolver implements CodeBreaker{
 
-    private Scanner scanner;
+    public Scanner scanner = new Scanner(System.in);
 
     public HumanSolver() {
     }
