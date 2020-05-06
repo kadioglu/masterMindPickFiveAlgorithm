@@ -1,7 +1,7 @@
 package properProject;
 
 import java.util.*;
-
+//
 public class SolverAlgorithm implements CodeBreaker {
 
     private Key response = null;

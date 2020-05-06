@@ -1,5 +1,5 @@
 package properProject;
-
+//
 import comp127graphics.Ellipse;
 
 public class SmallOrb implements Orb{
@@ -25,4 +25,3 @@ public class SmallOrb implements Orb{
     }
 }
 
-///

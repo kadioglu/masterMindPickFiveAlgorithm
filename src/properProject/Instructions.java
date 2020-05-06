@@ -2,7 +2,7 @@ package properProject;
 
 public class Instructions {
     public String toString(){
-
+//
         String words = ("*==================================================* \n \n " +
                         "Hello! Welcome to our game of Mastermind \n" +
         ("\n") +

@@ -3,7 +3,7 @@ package properProject;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
-
+//
 public class Key {
 
     private final int black;

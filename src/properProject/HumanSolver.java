@@ -2,7 +2,7 @@ package properProject;
 
 import java.util.Scanner;
 
-
+//
 public class HumanSolver implements CodeBreaker{
 
     public Scanner scanner = new Scanner(System.in);

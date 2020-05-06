@@ -1,7 +1,7 @@
 package properProject;
 
 import java.util.Scanner;
-
+//
 public class Game {
     private static Scanner scanner;
     Instructions instructions = new Instructions();
