@@ -1,12 +1,8 @@
 package properProject;
 
-import comp127graphics.CanvasWindow;
-import comp127graphics.GraphicsGroup;
-import comp127graphics.GraphicsObject;
-import comp127graphics.Point;
-
-import java.awt.*;
-import java.util.List;
+import comp127graphics.*;
+import java.awt.Color;
+import java.util.*;
 
 public class GameManager {
 

@@ -10,7 +10,7 @@ public class Main {
 
         int size = 100;
         Banner banner = new Banner();
-        Board board = new Board(size,canvas,banner);
+        Board board = new Board(size,canvas);
         board.nextRow = 0;
 
         canvas.add(banner);

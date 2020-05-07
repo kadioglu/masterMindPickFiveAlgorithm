@@ -1,16 +1,5 @@
 package properProject;
 
-import comp127graphics.GraphicsGroup;
-import comp127graphics.GraphicsText;
-import comp127graphics.Path;
-import comp127graphics.Point;
-
-
-import java.util.List;
-import java.util.stream.Stream;
-
-import static comp127graphics.FontStyle.BOLD;
-
 public class Instructions {
     private static ColorManager colorKey = new ColorManager();
 

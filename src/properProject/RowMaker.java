@@ -1,12 +1,8 @@
 package properProject;
 
-import comp127graphics.GraphicsGroup;
-import comp127graphics.GraphicsObject;
-import comp127graphics.GraphicsText;
-
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
+import comp127graphics.*;
+import java.awt.Color;
+import java.util.*;
 
 import static comp127graphics.FontStyle.BOLD;
 

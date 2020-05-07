@@ -2,7 +2,6 @@ package properProject;
 
 import java.awt.Color;
 import java.util.*;
-import java.util.ArrayList;
 
 
 /**

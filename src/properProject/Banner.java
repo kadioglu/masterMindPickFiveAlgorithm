@@ -1,8 +1,7 @@
 package properProject;
 
 import comp127graphics.*;
-
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 
 import static comp127graphics.FontStyle.BOLD;
@@ -60,7 +59,6 @@ public class Banner extends Popup{
     public Rectangle makeBack() {
         return null;
     }
-
 
     @Override
     public void configureText(GraphicsGroup group) {

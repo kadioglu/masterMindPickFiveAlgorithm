@@ -1,8 +1,7 @@
 package properProject;
 
-import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.awt.Color;
+import java.util.*;
 
 public class ColorManager {
 
