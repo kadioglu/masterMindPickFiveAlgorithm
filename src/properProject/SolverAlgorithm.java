@@ -44,8 +44,7 @@ public class SolverAlgorithm implements CodeBreaker {
     /**
      * Function that guesses the next code based on the possible and impossible codes and
      * a minimax algorithm
-     * @return Code returns a code object that is the next most likely code to win the game
-     * or will help win the game soon
+     * @return bestGuess a code object that is the next most likely code to win the game or will help win the game soon
      */
 
     @Override

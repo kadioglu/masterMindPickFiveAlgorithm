@@ -3,7 +3,15 @@ package properProject;
 
 import comp127graphics.CanvasWindow;
 
+/**
+ * Main CLass used to run the program
+ */
+
 public class Main {
+
+    /**
+     * Main method that makes a new canvas, banner and board and game manager
+     */
 
     public static void main(String args[]) {
         CanvasWindow canvas = new CanvasWindow("MasterMind", 1000, 800);

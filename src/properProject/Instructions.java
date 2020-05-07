@@ -1,7 +1,16 @@
 package properProject;
 
+/**
+ * Basic instructions for the player
+ */
+
 public class Instructions {
     private static ColorManager colorKey = new ColorManager();
+
+    /**
+     * Makes a string object with instructions for the player to be displayed on the banner
+     * @return words the instructions
+     */
 
     public static String humanManual() {
 //
@@ -23,6 +32,20 @@ public class Instructions {
                 ("Or You can ask the computer to play and our algorithm will always solve it in five moves. \n Click your choice below to play in your Java console or let the computer play"));
         return words;
     }
+
+    /**
+     * GameManager constructor
+     * @param canvas The canvas window to add objects to
+     * @param banner the new banner of instructions to display
+     * @param board a board object containing the rows in the game
+     * @param size the sizes to be used by the board object to make new rows of specific size
+     */
+
+
+    /**
+     * Makes a simple feedback string to tell the user that the computer has taken over
+     * @return words the feedback
+     */
 
     public String computerManual() {
         String words = ("============================================================================================\n \n" +

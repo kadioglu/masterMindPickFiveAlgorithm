@@ -1,6 +1,10 @@
 package properProject;
-//
+
 import comp127graphics.Ellipse;
+
+/**
+ * Small orb graphics object that is a child of the Orb interface
+ */
 
 public class SmallOrb implements Orb{
     private static ColorManager colorKey = new ColorManager();

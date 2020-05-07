@@ -1,7 +1,12 @@
 package properProject;
 
 import comp127graphics.Ellipse;
-//
+
+
+/**
+ * Class that is an Orb and makes a large orb Graphics Object to be placed in a row
+ */
+
 public class LargeOrb implements Orb{
     private static ColorManager colorKey = new ColorManager();
     public double size;

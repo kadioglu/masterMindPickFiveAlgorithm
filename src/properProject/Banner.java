@@ -6,6 +6,10 @@ import java.util.stream.Stream;
 
 import static comp127graphics.FontStyle.BOLD;
 
+/**
+ * Popup banner that is a child of popup class. Used to display instructions
+ */
+
 public class Banner extends Popup{
 
     private String humanPath = ("images/human.png");
@@ -14,6 +18,9 @@ public class Banner extends Popup{
     private String words;
     private Instructions instructions = new Instructions();
 
+    /**
+     * Empty constructor that makes a Banner object
+     */
     public Banner()  {
 
         this.words = instructions.humanManual();
@@ -39,6 +46,11 @@ public class Banner extends Popup{
 
     }
 
+    /**
+     * Makes a polygon path as a List of Points
+     * @return pathPoints  List of points to be used to generate a Graphics path object
+     */
+
     @Override
     public List<Point> makePoly(){
 
@@ -55,10 +67,19 @@ public class Banner extends Popup{
         return pathPoints;
     };
 
+    /**
+     * Function to make a rectangle for the backround. Not used here
+     */
+
     @Override
     public Rectangle makeBack() {
         return null;
     }
+
+    /**
+     * Function to make a stream of GraphicsText objects to be added to banner
+     * @param group  The group that the lines are added to
+     */
 
     @Override
     public void configureText(GraphicsGroup group) {
@@ -73,8 +94,11 @@ public class Banner extends Popup{
         });
     }
 
+    /**
+     * Function that sets the text of a specific GraphicsText object
+     */
+
     @Override
     public void setText(String words) {
-
     }
 }

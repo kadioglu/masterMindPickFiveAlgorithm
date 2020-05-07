@@ -47,6 +47,7 @@ public class Code {
 
     /**
      * Helper function to get information on the range of the code
+     * @return a permutation calculation that gives the possible number of codes
      */
 
     private static int codeRange() {
@@ -55,6 +56,7 @@ public class Code {
 
     /**
      * Helper function to get information on the length of the code
+     * @return codeLength the length of a code
      */
 
     public static int getCodeLength() {
@@ -62,7 +64,8 @@ public class Code {
     }
 
     /**
-     * Function to get information on the range of the code
+     * Function to get information on the range that the code can occupy based on permutations
+     * @return universe a set containing the code objects
      */
 
     public static Set<Code> getRange() {
@@ -77,6 +80,7 @@ public class Code {
      * Checks if a code is valid which should be a string of 4 numbers without spaces and only from
      * 0 to 5 for each number
      * @param input  The code input string
+     * @return boolean a boolean based on whether a code is valid or not. True if valid
      */
 
     public static boolean isValid(String input) {
@@ -99,6 +103,7 @@ public class Code {
     /**
      * Changes an array of integers to a single integer
      * @param pegs  The array of integers as input
+     * @return q the integer made from the integer list
      */
 
     private int toCodePoint(int[] pegs) {
@@ -114,6 +119,7 @@ public class Code {
     /**
      * Changes an input string of 4 integers to an array of integers
      * @param codePoint the input string of 4 integers
+     * @return output The integer list to be used as pegs
      */
 
     private int[] toPegs(int codePoint) {
@@ -130,6 +136,7 @@ public class Code {
     /**
      * Creates orbs for the actual results of the system based on the correct code
      * @param other the other correct code to be compared against
+     * @return Key a new key object based on the results of the comparison
      */
 
     public Key getKey(Code other) {
@@ -160,6 +167,7 @@ public class Code {
 
     /**
      * Function that changes the code to a List of Colors from numbers
+     * @return colorList the List of colors based on the code
      */
 
     public List<Color> makeColorList(){
@@ -167,12 +175,13 @@ public class Code {
         for (int i = 0; i < pegs.length; i++) {
             colorList.add(wordKey.toColor(pegs[i]));
         }
-        
+
         return colorList;
     }
 
     /**
      * Function that changes the code to a String of Colors from numbers
+     * @return stringOutput the String to be printed out or used by the System
      */
 
     @Override

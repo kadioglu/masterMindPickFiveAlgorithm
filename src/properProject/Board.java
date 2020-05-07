@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.util.*;
 
 /**
- * Class that creates a board object that holds the color code and position of colors.
+ * Class that creates a board object that holds the overall rows and manages row production.
  */
 public class Board {
 
@@ -19,6 +19,13 @@ public class Board {
     public List<GraphicsGroup> myRows = new ArrayList<>();
     public List<Color> emptyOrbs = List.of(DIMMED_PURPLE,DIMMED_PURPLE,DIMMED_PURPLE,DIMMED_PURPLE);
 
+
+    /**
+     * Constructor that Builds board
+     * @param size  The size of rows in the board
+     * @param canvas the canvas window to draw rows on
+     */
+
     public Board(double size, CanvasWindow canvas){
 
         for (int i=1;i<=10;i++) {
@@ -31,6 +38,15 @@ public class Board {
         }
 
     }
+
+    /**
+     * Makes a new row that will contain specific orbs from the player answer and results
+     * @param size  Size of the row
+     * @param canvas canvas window to add row to
+     * @i count number for the row
+     * @param newAnswers List of colors from the player answers
+     * @newResults List of colors from the player's results (which answers were right)
+     */
 
     public void makeNewRow(double size, CanvasWindow canvas, int i, List<Color> newAnswers, List<Color> newResults){
         GraphicsGroup myRow = row.createRow(size, i, newAnswers,newResults);
