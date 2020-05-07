@@ -1,7 +1,12 @@
 package properProject;
 
 import comp127graphics.*;
+
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.Color;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.*;
 
 
@@ -13,6 +18,14 @@ public class GameManager {
 
 
     /**
+     * Create some new audio clips for future use
+     */
+
+    AudioClip music = null;
+    AudioClip ping = null;
+    AudioClip pong = null;
+
+    /**
      * GameManager constructor
      * @param canvas The canvas window to add objects to
      * @param banner the new banner of instructions to display
@@ -21,16 +34,19 @@ public class GameManager {
      */
 
     public GameManager(CanvasWindow canvas, Banner banner, Board board, int size){
-
+        loadSounds();
+        ping.play();
 
         canvas.onClick( e -> {
-           Point currentPosition = e.getPosition();
+
+            Point currentPosition = e.getPosition();
            GraphicsObject currentObject= canvas.getElementAt(currentPosition);
 
 
            if(currentObject != null){
                System.out.println(currentObject);
                if(currentObject.toString().equals("Image at position (400.0, 400.0) with file images/robot.png")){
+                   ping.play();
                    Boolean answer = false;
                    canvas.remove(banner);
                    canvas.draw();
@@ -38,6 +54,7 @@ public class GameManager {
 
                }
                else if(currentObject.toString().equals("Image at position (200.0, 400.0) with file images/human.png")){
+                   ping.play();
                    Boolean answer = true;
                    canvas.remove(banner);
                    canvas.draw();
@@ -85,6 +102,8 @@ public class GameManager {
             canvas.draw();
             myColors.clear();
 
+            ping.play();
+
             if(wrapper.turn > 9){
                 break;
             }
@@ -100,7 +119,9 @@ public class GameManager {
             System.out.println("========Winner========");
             System.out.println("Answer: " + maker.getAnswer());
             System.out.println("Turns: " + wrapper.turn);
-            System.out.println("You won! :)");
+            System.out.println("You won! (◕‿◕✿)");
+            ping.play();
+
         } else{
             win.setText("You Lose (ಠ╭╮ಠ)");
             canvas.add(win);
@@ -109,8 +130,31 @@ public class GameManager {
             System.out.println("========Loser========");
             System.out.println("Answer: " + maker.getAnswer());
             System.out.println("Turns: " + wrapper.turn);
-            System.out.println("You Lost! :(");
+            System.out.println("You Lost! (ಠ╭╮ಠ)");
+            pong.play();
+
         }
 
     }
+
+    public void loadSounds()
+    {
+
+        try
+        {
+            URL musicURL = new URL(  "https://cdn.glitch.com/002aac9a-9210-496a-b725-bbb12ba7f4e9%2Fbensound-smallguitar%20(1).wav?v=1587531089488");
+            URL pingURL = new URL( "https://cdn.glitch.com/002aac9a-9210-496a-b725-bbb12ba7f4e9%2F446111__justinvoke__success-jingle%20(1).wav?v=1587531080755");
+            URL pongURL = new URL( "https://cdn.glitch.com/002aac9a-9210-496a-b725-bbb12ba7f4e9%2FElectronic_Chime-KevanGC-495939803.wav?v=1587001930682");
+
+            music = Applet.newAudioClip(musicURL);
+            ping = Applet.newAudioClip(pingURL);
+            pong = Applet.newAudioClip(pongURL);
+
+        }
+        catch (MalformedURLException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 }

@@ -22,9 +22,9 @@ public class Main {
         board.nextRow = 0;
 
         canvas.add(banner);
+        GameManager gameManager = new GameManager(canvas,banner,board,size);
         canvas.draw();
 
-        GameManager gameManager = new GameManager(canvas,banner,board,size);
 
     }
 }

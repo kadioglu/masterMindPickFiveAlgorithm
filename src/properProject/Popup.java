@@ -14,8 +14,8 @@ import java.util.List;
 public abstract class Popup extends GraphicsGroup {
 
     protected ColorManager colorKey = new ColorManager();
-    protected Color WHITE = colorKey.toColor(7);
-    protected Color BLACK = colorKey.toColor(8);
+    protected Color WHITE = colorKey.toColor(8);
+    protected Color BLACK = colorKey.toColor(7);
     protected Color GREY = colorKey.toColor(9);
 
 
