@@ -1,7 +1,9 @@
 package properProject;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -28,9 +30,6 @@ public class Key {
         this.white = white;
         this.none = none;
     }
-
-
-
 
 
     /**
@@ -81,6 +80,21 @@ public class Key {
     @Override
     public String toString() {
         return "black=" + black + ", white=" + white + ", none=" + none;
+    }
+
+    public List<Color> toColor() {
+        ColorManager colorKey = new ColorManager();
+        List<Color> colorList = new ArrayList<>();
+        for (int i = 0; i < black; i++) {
+            colorList.add(colorKey.toColor(7));
+        }
+        for (int i = 0; i < white; i++) {
+            colorList.add(colorKey.toColor(8));
+        }
+        for (int i = 0; i < none; i++) {
+            colorList.add(colorKey.toColor(11));
+        }
+        return colorList;
     }
 
     /**

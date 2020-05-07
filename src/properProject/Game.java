@@ -16,7 +16,7 @@ public class Game {
     private static int turn = 0;
 
     /**
-     *
+     * Function that creates one game of Mastermind that is solved within five guesses or less
      */
     public static void runGame(){
         System.out.println("Do you want to play or do you want the computer to play? me/computer");

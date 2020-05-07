@@ -2,6 +2,9 @@ package properProject;
 //
 import comp127graphics.Ellipse;
 
+/**
+ * Implements the Orb interface and creates a graphics object that is an ellipse
+ */
 public class SmallOrb implements Orb{
     private static ColorManager colorKey = new ColorManager();
     public double size;
