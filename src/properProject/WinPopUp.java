@@ -40,6 +40,7 @@ public class WinPopUp extends Popup{
         return null;
     }
 
+    //
 
     /**
      * Function that takes a text and adds it to a graphics group after configuring it
