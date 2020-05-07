@@ -5,8 +5,6 @@ import comp127graphics.CanvasWindow;
 
 public class Main {
 
-    private static int turn = 0;
-
     public static void main(String args[]) {
         CanvasWindow canvas = new CanvasWindow("MasterMind", 1000, 800);
 

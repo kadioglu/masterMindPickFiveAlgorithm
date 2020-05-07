@@ -1,35 +1,42 @@
 package properProject;
 
-import comp127graphics.CanvasWindow;
-import comp127graphics.GraphicsText;
-import comp127graphics.Rectangle;
+import comp127graphics.*;
+
+import java.util.List;
+
 
 public class WinPopUp extends Popup{
 
-    private CanvasWindow canvas;
-    private GraphicsText text = new GraphicsText();
+    String words;
+    private GraphicsText text = new GraphicsText(words,380,380);
 
-    public WinPopUp(String words, CanvasWindow canvas){
-        this.canvas = canvas;
-        this.add(text);
-        this.add(makeText(words));
+    public WinPopUp(String words){
+        this.words = words;
+        this.add(makeBack());
+        setText(words);
+        configureText(this);
     }
 
     @Override
     public Rectangle makeBack() {
-        Rectangle background = new Rectangle(canvas.getWidth()/2,canvas.getHeight()/2,200,300);
+        Rectangle background = new Rectangle(350,350,200,50);
         background.setFillColor(super.WHITE);
-        background.setStrokeWidth(4);
+        background.setStrokeWidth(10);
         return background;
     }
 
     @Override
-    public GraphicsText makeText(String words) {
-        text.setFillColor(super.ORANGE);
-        return text;
+    public List<Point> makePoly() {
+        return null;
     }
 
-    public void setText(String words){
+    @Override
+    public void configureText(GraphicsGroup group) {
+        text.setFontStyle(FontStyle.BOLD);
+        group.add(text);
+    }
+
+    public void setText(String words) {
         text.setText(words);
     }
 

@@ -10,11 +10,9 @@ import java.util.List;
 
 public class GameManager {
 
-    private CanvasWindow canvas;
-    private GraphicsGroup win = new WinPopUp("You Win",canvas);
 
     public GameManager(CanvasWindow canvas, Banner banner, Board board, int size){
-        this.canvas = canvas;
+
 
         canvas.onClick( e -> {
            Point currentPosition = e.getPosition();
@@ -74,9 +72,10 @@ public class GameManager {
             }
 
         } while (!response.isCorrect());
+        WinPopUp win = new WinPopUp("");
 
         if (response.isCorrect()) {
-
+            win.setText("You Win (◕‿◕✿)");
             canvas.add(win);
             canvas.draw();
             System.out.println();
@@ -85,6 +84,9 @@ public class GameManager {
             System.out.println("Turns: " + wrapper.turn);
             System.out.println("You won! :)");
         } else{
+            win.setText("You Lose (ಠ╭╮ಠ)");
+            canvas.add(win);
+            canvas.draw();
             System.out.println();
             System.out.println("========Loser========");
             System.out.println("Answer: " + maker.getAnswer());

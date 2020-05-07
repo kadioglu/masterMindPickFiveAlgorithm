@@ -2,22 +2,24 @@ package properProject;
 
 import comp127graphics.*;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 import java.util.stream.Stream;
 
 import static comp127graphics.FontStyle.BOLD;
 
-public class Banner extends GraphicsGroup{
+public class Banner extends Popup{
 
     private String humanPath = ("images/human.png");
     private String computerPath = ("images/robot.png");
 
-    private ColorManager colorKey = new ColorManager();
+    private String words;
     private Instructions instructions = new Instructions();
 
     public Banner()  {
+
+        this.words = instructions.humanManual();
+
+        GraphicsGroup banner = this;
 
         Image human = new Image(200,400,humanPath);
         Image computer = new Image(400,400,computerPath);
@@ -25,34 +27,21 @@ public class Banner extends GraphicsGroup{
         human.setMaxHeight(80);
         computer.setMaxHeight(80);
 
-        GraphicsGroup banner = this;
-
-        Path path = new Path(pointGenerator());
-        path.setFillColor(colorKey.toColor(8));
+        Path path = new Path(makePoly());
+        path.setFillColor(super.WHITE);
         path.setStrokeWidth(20);
         banner.add(path);
         banner.add(human);
         banner.add(computer);
 
-
-
-        var wrapper = new Object(){ double ordinal = 40; };
-
-        String str = instructions.humanManual();
-
-        Stream<String> lines = str.lines();
-        lines.forEach(out -> {
-            GraphicsText text = new GraphicsText(out,20,wrapper.ordinal);
-            text.setFontStyle(BOLD);
-            banner.add(text);
-            wrapper.ordinal+= 15;
-        });
+        configureText(banner);
 
         banner.setPosition(120,120);
 
     }
 
-    private List<Point> pointGenerator(){
+    @Override
+    public List<Point> makePoly(){
 
         Point point1 = new Point(0,0);
         Point point2 = new Point(750,0);
@@ -66,4 +55,28 @@ public class Banner extends GraphicsGroup{
 
         return pathPoints;
     };
+
+    @Override
+    public Rectangle makeBack() {
+        return null;
+    }
+
+
+    @Override
+    public void configureText(GraphicsGroup group) {
+        var wrapper = new Object(){ double ordinal = 40; };
+
+        Stream<String> lines = words.lines();
+        lines.forEach(out -> {
+            GraphicsText text = new GraphicsText(out,20,wrapper.ordinal);
+            text.setFontStyle(BOLD);
+            group.add(text);
+            wrapper.ordinal+= 15;
+        });
+    }
+
+    @Override
+    public void setText(String words) {
+
+    }
 }
