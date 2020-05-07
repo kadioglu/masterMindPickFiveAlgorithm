@@ -1,8 +1,8 @@
 package properProject;
 
-import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.awt.Color;
+import java.util.*;
+import java.util.ArrayList;
 
 
 /**
@@ -81,6 +81,27 @@ public class Key {
     @Override
     public String toString() {
         return "black=" + black + ", white=" + white + ", none=" + none;
+    }
+
+
+    /**
+     * Function that returns the key's parameters as a Color object List
+     * @return Color List of the key
+     */
+
+    public List<Color> toColor(){
+        ColorManager colorKey = new ColorManager();
+        List<Color> colorList = new ArrayList<>();
+        for (int i = 0; i < black; i++) {
+            colorList.add(colorKey.toColor(7));
+        }
+        for (int i = 0; i < white; i++) {
+            colorList.add(colorKey.toColor(8));
+        }
+        for (int i = 0; i < none; i++) {
+            colorList.add(colorKey.toColor(11));
+        }
+        return colorList;
     }
 
     /**

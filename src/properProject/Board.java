@@ -4,6 +4,7 @@ import comp127graphics.CanvasWindow;
 import comp127graphics.GraphicsGroup;
 
 import java.awt.*;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class Board {
 
     private static ColorManager colorKey = new ColorManager();
     public static Instructions manual = new Instructions();
+
 
     public static double nextRow;
     public static double nextPosition;
@@ -28,7 +30,7 @@ public class Board {
     private List<Color> resultColors = new ArrayList<>();
     public List<Color> emptyOrbs = List.of(DIMMED_PURPLE,DIMMED_PURPLE,DIMMED_PURPLE,DIMMED_PURPLE);
 
-    public Board(double size, CanvasWindow canvas) {
+    public Board(double size, CanvasWindow canvas, Banner banner){
 
         for (int i=1;i<=10;i++) {
             GraphicsGroup myRow = row.createRow(size, i, emptyOrbs,emptyOrbs);
@@ -36,20 +38,20 @@ public class Board {
             nextRow += 30 + spacing;
             myRows.add(myRow);
             canvas.add(myRow);
-//            canvas.add(manual.guiBanner());
             canvas.setBackground(DIMMED_PURPLE);
         }
-        canvas.draw();
 
     }
 
-    public void makeNewRow(double size, CanvasWindow canvas, int i, List<Color> newAnswers){
-        GraphicsGroup myRow = row.createRow(size, i, newAnswers,newAnswers);
+    public void makeNewRow(double size, CanvasWindow canvas, int i, List<Color> newAnswers, List<Color> newResults){
+        GraphicsGroup myRow = row.createRow(size, i, newAnswers,newResults);
         myRow.setPosition(50, 0 + nextRow);
         canvas.add(myRow);
         nextRow += 30 + spacing;
         canvas.draw();
 
     }
+
+
 
 }

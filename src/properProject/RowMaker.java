@@ -49,7 +49,7 @@ public class RowMaker {
 
         for (int i=0;i<4;i++) {
             LargeOrb largeOrb = new LargeOrb(size);
-            largeOrb.outputOrb.setFillColor(resultList.get(i));
+            largeOrb.outputOrb.setFillColor(colorList.get(i));
             answerOrbList.add(largeOrb.outputOrb);
         }
 

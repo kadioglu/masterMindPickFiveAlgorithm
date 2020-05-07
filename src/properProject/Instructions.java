@@ -36,45 +36,14 @@ public class Instructions {
     }
 
     public String computerManual() {
-        String words = ("============================================================================================" +
+        String words = ("============================================================================================\n \n" +
                 "Please wait while I (your computer) do my awesome thing and solve this puzzle! \n" +
                 ("\n") +
                 ("============================================================================================"));
         return words;
     }
 
-    public GraphicsGroup guiBanner() {
-        GraphicsGroup banner = new GraphicsGroup();
-        Point point1 = new Point(0,0);
-        Point point2 = new Point(750,0);
-        Point point3 = new Point(750,400);
-        Point point4 = new Point(650,450);
-        Point point5 = new Point(100,450);
-        Point point6 = new Point(0,400);
-        Point point7 = new Point(0,0);
 
-        List<Point> pathPoints = List.of(point1,point2,point3,point4,point5,point6,point7);
-
-        Path path = new Path(pathPoints);
-        path.setFillColor(colorKey.toColor(8));
-        path.setStrokeWidth(20);
-        banner.add(path);
-
-        var wrapper = new Object(){ double ordinal = 40; };
-
-        String str = humanManual();
-        Stream<String> lines = str.lines();
-        lines.forEach(out -> {
-            GraphicsText text = new GraphicsText(out,20,wrapper.ordinal);
-            text.setFontStyle(BOLD);
-            banner.add(text);
-            wrapper.ordinal+= 15;
-        });
-
-        banner.setPosition(120,120);
-
-        return banner;
-    }
 
 }
 
