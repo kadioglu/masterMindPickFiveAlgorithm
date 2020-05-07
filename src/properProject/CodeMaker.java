@@ -32,6 +32,7 @@ public class CodeMaker {
 
     /**
      * Class that gets the code from the maker
+     * @return answer the answer to the code made by the maker
      */
 
     public Code getAnswer() {
@@ -41,6 +42,7 @@ public class CodeMaker {
     /**
      * Verifies that the code by the maker is the same as the original correct code
      * @param guess  The guess by the maker
+     * @return Key the key that tells how many positions the player got right
      */
 
     public Key verify(Code guess) {

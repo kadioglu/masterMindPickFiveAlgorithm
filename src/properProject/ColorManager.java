@@ -3,6 +3,10 @@ package properProject;
 import java.awt.Color;
 import java.util.*;
 
+/**
+ * Contains the color maps and word maps to convert integers and strings to colors
+ */
+
 public class ColorManager {
 
     public final Map<Integer, Color> ColorMap = new HashMap<>();

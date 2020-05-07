@@ -4,8 +4,21 @@ import comp127graphics.*;
 import java.awt.Color;
 import java.util.*;
 
+
+/**
+ * Controls the entire game and contains the main graphics elements in the game
+ */
+
 public class GameManager {
 
+
+    /**
+     * GameManager constructor
+     * @param canvas The canvas window to add objects to
+     * @param banner the new banner of instructions to display
+     * @param board a board object containing the rows in the game
+     * @param size the sizes to be used by the board object to make new rows of specific size
+     */
 
     public GameManager(CanvasWindow canvas, Banner banner, Board board, int size){
 
@@ -34,6 +47,15 @@ public class GameManager {
            }
         });
     }
+
+    /**
+     * Function that handles the user's clicking the human and robot images on the banner
+     * It also starts the game based on the users click event position
+     * @param canvas The canvas window to add objects to
+     * @param answer a boolean stating wether the player wants to play or not
+     * @param board a board object containing the rows in the game
+     * @param size the sizes to be used by the board object to make new rows of specific size
+     */
 
     private void handleClick(CanvasWindow canvas, Boolean answer, Board board, int size){
 

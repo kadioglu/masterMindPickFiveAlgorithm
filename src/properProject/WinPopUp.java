@@ -17,6 +17,11 @@ public class WinPopUp extends Popup{
         configureText(this);
     }
 
+    /**
+     * Function that makes a background that is a rectangle
+     * @return Rectangle the rectangle GraphicsObject
+     */
+
     @Override
     public Rectangle makeBack() {
         Rectangle background = new Rectangle(350,350,200,50);
@@ -25,16 +30,32 @@ public class WinPopUp extends Popup{
         return background;
     }
 
+    /**
+     * Function that makes a path of points to be used to make a backgroudn as a Path object
+     * @return List<Point> a list of points graphics objects
+     */
+
     @Override
     public List<Point> makePoly() {
         return null;
     }
+
+
+    /**
+     * Function that takes a text and adds it to a graphics group after configuring it
+     * @param group the graphics group to have text added to
+     */
 
     @Override
     public void configureText(GraphicsGroup group) {
         text.setFontStyle(FontStyle.BOLD);
         group.add(text);
     }
+
+    /**
+     * Function that sets the text of a GraphicsText object
+     * @param words the String of words
+     */
 
     public void setText(String words) {
         text.setText(words);
