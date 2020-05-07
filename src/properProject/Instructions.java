@@ -6,13 +6,7 @@ import comp127graphics.Path;
 import comp127graphics.Point;
 
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.StringReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Stream;
 
 import static comp127graphics.FontStyle.BOLD;
