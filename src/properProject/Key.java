@@ -1,10 +1,8 @@
 package properProject;
 
-import java.awt.*;
+import java.awt.Color;
+import java.util.*;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -30,6 +28,9 @@ public class Key {
         this.white = white;
         this.none = none;
     }
+
+
+
 
 
     /**
@@ -82,7 +83,13 @@ public class Key {
         return "black=" + black + ", white=" + white + ", none=" + none;
     }
 
-    public List<Color> toColor() {
+
+    /**
+     * Function that returns the key's parameters as a Color object List
+     * @return Color List of the key
+     */
+
+    public List<Color> toColor(){
         ColorManager colorKey = new ColorManager();
         List<Color> colorList = new ArrayList<>();
         for (int i = 0; i < black; i++) {
