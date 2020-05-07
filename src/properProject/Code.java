@@ -1,9 +1,7 @@
 package properProject;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.awt.Color;
+import java.util.*;
 
 /**
  * Class that creates a Code object that is used to keep information on a generated or human-made code
@@ -11,10 +9,12 @@ import java.util.Set;
 
 public class Code {
 
+    private static List<Color> colorList = new ArrayList<>();
+
     private static final Random RANDOM = new Random();
     private static int codeRadix = 6;
     private static int codeLength = 4;
-    private Key wordKey = new Key(0,0,0);
+    private ColorManager wordKey = new ColorManager();
     public final int[] pegs;
     public final int codePoint;
 
@@ -126,6 +126,7 @@ public class Code {
     }
 
 
+
     /**
      * Creates orbs for the actual results of the system based on the correct code
      * @param other the other correct code to be compared against
@@ -155,6 +156,19 @@ public class Code {
         }
         none = codeLength - black - white;
         return new Key(black, white, none);
+    }
+
+    /**
+     * Function that changes the code to a List of Colors from numbers
+     */
+
+    public List<Color> makeColorList(){
+
+        for (int i = 0; i < pegs.length; i++) {
+            colorList.add(wordKey.toColor(pegs[i]));
+        }
+        
+        return colorList;
     }
 
     /**

@@ -3,13 +3,13 @@ package properProject;
 import comp127graphics.Ellipse;
 //
 public class LargeOrb implements Orb{
-    private static Key colorKey;
+    private static ColorManager colorKey = new ColorManager();
     public double size;
     public Ellipse outputOrb;
 
     public LargeOrb(double size){
         this.size = size;
-        makeOrb(size);
+        makeOrb(size * 0.5);
     }
 
     /**
@@ -19,8 +19,8 @@ public class LargeOrb implements Orb{
     @Override
     public void makeOrb(double size) {
         Ellipse orb = new Ellipse(0,0,size,size);
-        orb.setStrokeColor(colorKey.toColor(7));
-        orb.setStrokeWidth(1);
+        orb.setStrokeColor(colorKey.toColor(8));
+        orb.setStrokeWidth(4);
         outputOrb = orb;
     }
 

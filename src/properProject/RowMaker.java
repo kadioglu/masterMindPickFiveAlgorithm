@@ -14,10 +14,13 @@ import static comp127graphics.FontStyle.BOLD;
  * Class used to make a row object for the GUI
  */
 
-public class Row {
-    private static Key colorKey;
+public class RowMaker {
+    private static ColorManager colorKey = new ColorManager();
     public static double nextPosition;
     public static double spacing = 30;
+
+    public RowMaker(){
+    }
 
     /**
      * Creates a Row As a graphics group for user answers
@@ -31,7 +34,7 @@ public class Row {
         java.util.List<GraphicsObject> answerOrbList = new ArrayList<>();
         List<GraphicsObject> resultOrbList = new ArrayList<>();
 
-        String innerText =  rowNumber + "";
+        String innerText =  rowNumber + " ";
         GraphicsText text = new GraphicsText(innerText,0,size * 1.3);
         text.setFillColor(colorKey.toColor(10));
         text.setFontStyle(BOLD);
@@ -39,15 +42,15 @@ public class Row {
 
         for (int i=0;i<4;i++)
         {
-            SmallOrb smallOrb = new SmallOrb(size * 0.2);
+            SmallOrb smallOrb = new SmallOrb(size);
             smallOrb.outputOrb.setFillColor(resultList.get(i));
             resultOrbList.add(smallOrb.outputOrb);
         }
 
         for (int i=0;i<4;i++) {
-            SmallOrb largeOrb = new SmallOrb(size * 0.5);
+            LargeOrb largeOrb = new LargeOrb(size);
             largeOrb.outputOrb.setFillColor(resultList.get(i));
-            resultOrbList.add(largeOrb.outputOrb);
+            answerOrbList.add(largeOrb.outputOrb);
         }
 
         nextPosition = 50;
