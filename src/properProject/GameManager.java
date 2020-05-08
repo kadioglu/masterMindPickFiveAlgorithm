@@ -112,14 +112,14 @@ public class GameManager {
         WinPopUp win = new WinPopUp("");
 
         if (response.isCorrect()) {
-            win.setText("You Win (◕‿◕✿)");
+            win.setText("You Win (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧");
             canvas.add(win);
             canvas.draw();
             System.out.println();
             System.out.println("========Winner========");
             System.out.println("Answer: " + maker.getAnswer());
             System.out.println("Turns: " + wrapper.turn);
-            System.out.println("You won! (◕‿◕✿)");
+            System.out.println("You won! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧");
             ping.play();
 
         } else{
@@ -130,7 +130,7 @@ public class GameManager {
             System.out.println("========Loser========");
             System.out.println("Answer: " + maker.getAnswer());
             System.out.println("Turns: " + wrapper.turn);
-            System.out.println("You Lost! (ಠ╭╮ಠ)");
+            System.out.println("You Lost! (ಠ╭╮ಠ) No Sparkles for you!");
             pong.play();
 
         }
