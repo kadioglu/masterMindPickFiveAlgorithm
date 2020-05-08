@@ -15,7 +15,7 @@ public abstract class Popup extends GraphicsGroup {
 
     protected ColorManager colorKey = new ColorManager();
     protected Color WHITE = colorKey.toColor(8);
-    protected Color BLACK = colorKey.toColor(7);
+    protected Color PURPLE = colorKey.toColor(10);
     protected Color GREY = colorKey.toColor(9);
 
 

@@ -16,13 +16,13 @@ public class Banner extends Popup{
     private String computerPath = ("images/robot.png");
 
     private String words;
-    private Instructions instructions = new Instructions();
 
     /**
      * Empty constructor that makes a Banner object
      */
     public Banner()  {
-
+        
+        Instructions instructions = new Instructions();
         this.words = instructions.humanManual();
 
         GraphicsGroup banner = this;
@@ -34,7 +34,8 @@ public class Banner extends Popup{
         computer.setMaxHeight(80);
 
         Path path = new Path(makePoly());
-        path.setFillColor(super.WHITE);
+        path.setFillColor(WHITE);
+        path.setStrokeColor(PURPLE);
         path.setStrokeWidth(20);
         banner.add(path);
         banner.add(human);
@@ -48,7 +49,7 @@ public class Banner extends Popup{
 
     /**
      * Makes a polygon path as a List of Points
-     * @return pathPoints  List of points to be used to generate a Graphics path object
+     * @return List of points to be used to generate a Graphics path object
      */
 
     @Override
@@ -62,10 +63,8 @@ public class Banner extends Popup{
         Point point6 = new Point(0,400);
         Point point7 = new Point(0,0);
 
-        List<Point> pathPoints = List.of(point1,point2,point3,point4,point5,point6,point7);
-
-        return pathPoints;
-    };
+        return List.of(point1,point2,point3,point4,point5,point6,point7);
+    }
 
     /**
      * Function to make a rectangle for the backround. Not used here
