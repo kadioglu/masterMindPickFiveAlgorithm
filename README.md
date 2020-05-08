@@ -5,17 +5,17 @@ This project is a short java program featuring a graphical user interface built 
 
 ![captions](screen1.png)
 
-This image displays the opening banner when the game is run 
+This image displays the opening banner when the game is run. 
 ![captions](screen3.png)
 
-Shown here is a preview of a losing game
+Shown here is a preview of a losing game.
 ![](screen2.png)
 
 This project contains several classes and interfaces, including a main function that runs the program. When the code is run from the main, the graphics game objects are created including a new canvas window, banner for the instructions, and the board. The board holds all of the rows and manages row production based on the user’s guesses. There is an orb interface that the large and small orbs implement to update the row of empty orbs with the correct colors respective to the user’s guesses. The program also has a game manager class that controls and contains all of the graphics elements within the game to ensure the desired outcome is produced and smooth running of the program. 
 
 What allows the implementation of the five guess algorithm to run is the solver algorithm. The solver algorithm draws inspiration from Donald Knuth’s MinMax algorithm that is essentially a function that will return a code object that is the most likely code to win the game or come close to winning the game.
 
-Provided below is a more general class diagram of how the program will function 
+Provided below is a more general class diagram of how the program will function. 
 ![](screen4.png)
 
 ## Tools
