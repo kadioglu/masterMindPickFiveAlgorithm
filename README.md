@@ -8,7 +8,7 @@ This project is a short java program featuring a graphical user interface built 
 This image displays the opening banner when a new game is run. 
 ![new game](screen3.png)
 
-There are five colors that can be combined to produce a four color code as shown in the larger orbs. Instead of black and white pegs, there is a row of four smaller orbs beside the larger ones to indicate the accuracy of the guesses. White orbs indicate that the colors are correct, while black orbs means both the position and color are correct, and an empty orb means neither is correct.
+There are five colors that can be combined to produce a four color code as shown in the larger orbs. In the program, the colors are represented by numbers i.e. 0 = red, 1 = orange, 2 = yellow, etc. Instead of black and white pegs, there is a row of four smaller orbs beside the larger ones to indicate the accuracy of the guesses. White orbs indicate that the colors are correct, while black orbs means both the position and color are correct, and an empty orb means neither is correct.
 
 Shown here is a preview of a losing game.
 ![losing](screen2.png)
