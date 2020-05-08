@@ -29,4 +29,5 @@ https://github.com/msimbao/masterMindPickFiveAlgorithm.git
 
 ## Acknowledgments
 Donald Knuth
+```
 COMP-127 Preceptors
