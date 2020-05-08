@@ -35,7 +35,7 @@ public class Banner extends Popup{
 
         Path path = new Path(makePoly());
         path.setFillColor(WHITE);
-        path.setStrokeColor(PURPLE);
+        path.setStrokeColor(BLUE);
         path.setStrokeWidth(20);
         banner.add(path);
         banner.add(human);
