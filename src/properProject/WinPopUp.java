@@ -27,7 +27,7 @@ public class WinPopUp extends Popup{
         Rectangle background = new Rectangle(350,350,200,50);
         background.setFillColor(WHITE);
         background.setStrokeWidth(10);
-        background.setStrokeColor(PURPLE);
+        background.setStrokeColor(BLUE);
         return background;
     }
 

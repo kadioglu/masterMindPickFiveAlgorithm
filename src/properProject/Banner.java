@@ -21,7 +21,7 @@ public class Banner extends Popup{
      * Empty constructor that makes a Banner object
      */
     public Banner()  {
-        
+
         Instructions instructions = new Instructions();
         this.words = instructions.humanManual();
 
